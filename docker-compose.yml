@@ -1,0 +1,18 @@
+version: '3.7'
+services:
+  r-container:
+    depends_on:
+      - sql-container  
+    container_name: 'r-container'
+    build: 
+      context: './'
+      dockerfile: './R/Dockerfile'
+    ports:
+      - '3838:3838'
+  sql-container:
+    env_file:
+      - './.env'
+    container_name: 'sql-container'
+    build: './SQL'
+    ports:
+      - '1433:1433'
