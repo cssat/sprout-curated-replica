@@ -9,6 +9,7 @@ services:
       dockerfile: './R/Dockerfile'
     ports:
       - '3838:3838'
+   # command: ["/usr/src/wait-for-mssql.sh", "sql-container:1433", "R CMD BATCH /usr/src/build_tables.R"]
   sql-container:
     env_file:
       - './.env'

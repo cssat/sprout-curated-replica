@@ -1,0 +1,1 @@
+/usr/src/build-database.sh & /opt/mssql/bin/sqlservr

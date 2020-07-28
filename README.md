@@ -73,10 +73,6 @@ GO
 which should result in something like the following output.
 
 ```
-(1 rows affected)
-1> select count(*) from iris
-2> GO
-
 -----------
         150
 

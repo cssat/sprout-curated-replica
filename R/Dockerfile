@@ -22,8 +22,11 @@ RUN sed -i 's/ODBC Driver 17 for SQL Server/SQL Server/' etc/odbcinst.ini
 RUN R -e "install.packages(c('odbc', 'dotenv'))"
 
 #copy app to image
-COPY R/scripts/ /usr/src
+COPY /R/src/ /usr/src/
 COPY .env /usr/
 
-RUN pwd
-CMD /bin/bash R CMD BATCH usr/src/build_tables.R
+# Grant permissions to ensure files are executable
+RUN chmod +x /usr/src/build-tables.R
+
+CMD /bin/bash /usr/src/entrypoint.sh
+
