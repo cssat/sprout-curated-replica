@@ -47,7 +47,7 @@ Ideally, this structure can be used as a template for maintaining the full curat
 If everything worked in your build of the images, you should be able to verify that `iris` exists on `dcyf_curated_replica`. This is accomplished by opening a shell for `sql-container` using the following command. 
 
 ```
-docker exec -it sql-server "bash"
+docker exec -it sql-container "bash"
 ```
 
 If the image is running, this should take you to a new prompt in your terminal which indicates your connection to `sql-container`. To interact with the databases on the container, you will need to access the MS-SQL CLI using the following command. 

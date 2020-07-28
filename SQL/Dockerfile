@@ -10,7 +10,7 @@ ENV MSSQL_PID Express
 WORKDIR /usr/src/
 
 # Copy scripts to load data
-COPY ./src/ /usr/src/
+COPY /SQL/src/ /usr/src/
 
 # Grant permissions to ensure files are executable
 RUN chmod +x /usr/src/build-database.sh
