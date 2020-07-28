@@ -6,11 +6,12 @@ ENV SA_PASSWORD ${SA_PASSWORD}
 ENV ACCEPT_EULA Y
 ENV MSSQL_PID Express
 
-# Create worrking directory
+# Create app directory
+RUN mkdir -p /usr/src/
 WORKDIR /usr/src/
 
 # Copy scripts to load data
-COPY /SQL/src/ /usr/src/
+COPY ./src/ /usr/src/
 
 # Grant permissions to ensure files are executable
 RUN chmod +x /usr/src/build-database.sh
